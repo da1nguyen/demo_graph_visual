@@ -1,12 +1,10 @@
 import streamlit as st
-import graphviz as graphviz
-st.title('Graphviz')
-# Creating graph object
-st.graphviz_chart('''
-digraph {
-"Training Data" -> "ML Algorithm"
-"ML Algorithm" -> "Model"
-"Model" -> "Result Forecasting"
-"New Data" -> "Model"
-}
-''')
+import pandas as pd
+import numpy as np
+st.title('Map')
+# Defining Latitude and Longitude
+locate_map = pd.DataFrame(
+np.random.randn(50, 2)/[10,10] + [15.4589, 75.0078],
+columns = ['latitude', 'longitude'])
+# Map Function
+st.map(locate_map)
